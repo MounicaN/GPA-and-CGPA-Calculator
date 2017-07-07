@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script type = "text/javascript">
+function check(){
+	if(document.getElementById('uname').value.length == 0 || document.getElementById('uname').value != 'system'){
+		alert('Invalid username or password');
+		return false;
+	}
+	if(document.getElementById('pswd').value.length == 0 || document.getElementById('pswd').value != 'mouniora'){
+		alert('Invalid username or password');
+		return false;
+	}
+	return true;
+}
+</script>
+<link rel = "stylesheet"
+type = "text/css"
+href = "CSS_File.css">
+</head>
+<h1> WELCOME TO GPA AND CGPA CALCULATOR!!</h1><br>
+<form name = "welcome_form" method = "post" action = "menu.html">
+<table align = "center">
+<tr>
+<td>Username</td>
+<td><input type = "text" name = "uname" id = "uname"></td></tr><br>
+<tr><td>Password</td>
+<td><input type = "password" name = "pswd" id = "pswd"></td></tr><br>
+<tr><td></td><td><input type = "submit" name = "submit_button" onclick = "return check()" value = "submit"></td></tr>
+</table><br><br><br><br><br><br>
+<p><u><b><center>ABOUT</center></b></u><br>
+
+This project mainly focuses on calculating the GPA and the CGPA till the current semester. It will fetch all the current semester subject details with their credits and student's  grades obtained, hence it could be able to find the gpa of the current semester and also the overall cgpa. The main thing is all the records of the students must be entered under the single semester (E.G: if it is the 2nd semester, after giving the semester number and the subject details, all the student's records of the class must be entered subsequently at the same time). The student grade details are to be  entered for each semester, hence the GPA of the current semester and the overall CGPA can be obtained.
+
+We can also sort the records based on the name, cgpa and register number. Each student's grades of each subject in current semester can also be viewed after calculating the GPA.</p>
+</form>
+<body>
+</body>
+</html>

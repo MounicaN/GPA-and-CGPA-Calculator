@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel = "stylesheet"
+type = "text/css"
+href = "CSS_File.css">
+<script>
+function moveToAdd(){
+	window.location = "Student_Details.html";
+	return false;
+}
+function exit(){
+	alert('Thank you!! Logged out Successfully!!');
+	return true;
+}
+</script>
+</head>
+<body>
+<h1>GPA AND CGPA CALCULATOR!!</h1><br>
+<form method  ="post" action = "http://localhost:8080/GPA_Calculator/Operations_Servlet">
+<table align = "center">
+<tr><td>
+<input type = "submit" value = "Student & Subject Details" name = "operation">
+</td></tr>
+</table>
+</form>
+<form method = "post" action = "http://localhost:8080/GPA_Calculator/Sort_Servlet">
+<table align = "center">
+<tr><br></tr>
+<tr>
+<tr> </tr>
+<tr>
+<td><h1>Sort By</h1></td>
+</tr>
+<tr>
+<td>
+<input type = "submit" name = "operation" value = "name">
+</td>
+</tr>
+<tr>
+<td>
+<input type = "submit" name = "operation" value = "cgpa">
+</td>
+</tr>
+<tr>
+<td>
+<input type = "submit" name = "operation" value = "regno">
+</td>
+</tr>
+<tr><td><hr color = "green"></td></tr></form>
+<tr><td><input type = "submit" name = "submit" onclick = "return moveToAdd()" value = "AddStudent">
+<form method  ="post" action = "http://localhost:8080/GPA_Calculator/Operations_Servlet">
+<tr><td><input type = "submit" name = "operation" onclick = "return exit()" value = "LogOut"></td></tr></form>
+</table>
+</body>
+</html>

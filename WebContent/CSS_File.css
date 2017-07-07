@@ -1,0 +1,17 @@
+@CHARSET "ISO-8859-1";
+
+body{
+background-color:#FFFF99;
+}
+h1{
+text-align:center;
+color:green;
+text-decoration:underline;
+}
+button:hover{
+background-color:yellow;
+button-radius:2px;
+}
+td{
+text-align:center;
+}

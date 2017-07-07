@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel = "stylesheet"
+type = "text/css"
+href = "CSS_File.css">
+<script type = "text/javascript">
+function check(){
+	if(document.getElementById('sem').value == ''){
+		alert('Please enter the Semester!!');
+		return false;
+	}
+	if(document.getElementById('subj1').value == ''){
+		alert('Please enter the subject 1!!');
+		return false;
+	}
+	if(document.getElementById('subj2').value == ''){
+		alert('Please enter the subject 2!!');
+		return false;
+	}
+	if(document.getElementById('subj3').value == ''){
+		alert('Please enter the subject 3!!');
+		return false;
+	}
+	if(document.getElementById('subj4').value == ''){
+		alert('Please enter the subject 4!!');
+		return false;
+	}
+	if(document.getElementById('subj5').value == ''){
+		alert('Please enter the subject 5!!');
+		return false;
+	}
+	if(document.getElementById('subj6').value == ''){
+		alert('Please enter the subject 6!!');
+		return false;
+	}
+	if(document.getElementById('cred1').value == ''){
+		alert('Please enter the credit 1!!');
+		return false;
+	}
+	if(document.getElementById('cred2').value == ''){
+		alert('Please enter the credit 2!!');
+		return false;
+	}
+	if(document.getElementById('cred3').value == ''){
+		alert('Please enter the credit 3!!');
+		return false;
+	}
+	if(document.getElementById('cred4').value == ''){
+		alert('Please enter the credit 4!!');
+		return false;
+	}
+	if(document.getElementById('cred5').value == ''){
+		alert('Please enter the credit 5!!');
+		return false;
+	}
+	if(document.getElementById('cred6').value == ''){
+		alert('Please enter the credit 6!!');
+		return false;
+	}
+	return true;
+}
+</script>
+</head>
+<body>
+<h1>GPA AND CGPA CALCULATOR!!</h1><br>
+<form name = "subject_form"  method = "post" action = "http://localhost:8080/GPA_Calculator/Operations_Servlet">
+<table align = "center">
+<tr><td>
+<tr><td>
+Semester<input type = "text" name = "semester" id = "sem"  required></td>
+</tr>
+</td></tr>
+<tr><td>
+<table align = "center">
+<tr>
+<b>Subjects</b>
+</tr>
+<tr>
+<td><input type = "text" name = "subj1" id = "subj1" ></td>
+</tr>
+<tr>
+<td><input type = "text" name = "subj2" id = "subj2"  ></td>
+</tr>
+<tr>
+<td><input type = "text" name = "subj3" id = "subj3"   ></td>
+</tr>
+<tr>
+<td><input type = "text" name = "subj4" id = "subj4"    ></td>
+</tr>
+<tr>
+<td><input type = "text" name = "subj5" id = "subj5"    ></td>
+</tr>
+<tr>
+<td><input type = "text" name = "subj6" id = "subj6"    ></td>
+</tr>
+</table>
+</td>
+<td>
+<table align = "center">
+<tr>
+<b>Credits</b>
+</tr>
+<tr>
+<td><input type = "text" name = "cred1" id = "cred1"  ></td>
+</tr>
+<tr>
+<td><input type = "text" name = "cred2" id = "cred2"  ></td>
+</tr>
+<tr>
+<td><input type = "text" name = "cred3" id = "cred3"   ></td>
+</tr>
+<tr>
+<td><input type = "text" name = "cred4" id = "cred4"   ></td>
+</tr>
+<tr>
+<td><input type = "text" name = "cred5" id = "cred5"  ></td>
+</tr>
+<tr>
+<td><input type = "text" name = "cred6" id = "cred6"  ></td>
+</tr>
+</table>
+</td></tr>
+<tr><td></td><td><input type = "submit" id = "submit" name = "operation" onclick = "return check()" value = "AddSubjects"></td></tr>
+</table>
+<center><p>**Please enter valid semester number to obtain the expected CGPA</p></center>
+</form>
+</body>
+</html>

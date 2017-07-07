@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type = "text/javascript">
+function isEmpty(){
+if(document.getElementById('name').value.length == 0){
+	alert('Please enter the name!!');
+	return false;
+}
+if(document.getElementById('rno').value.length == 0){
+	alert('Please enter the register number!!');
+	return false;
+}
+if(document.getElementById('gid1').value == ''){
+	alert('Please enter the grade 1');
+	return false;
+}
+if(document.getElementById('gid2').value == ''){
+	alert('Please enter the grade 2');
+	return false;
+}
+if(document.getElementById('gid3').value == ''){
+	alert('Please enter the grade 3');
+	return false;
+}
+if(document.getElementById('gid4').value == ''){
+		alert('Please enter the grade 4');
+		return false;
+}
+if(document.getElementById('gid5').value == ''){
+	alert('Please enter the grade 5');
+	return false;
+}
+if(document.getElementById('gid6').value == ''){
+	alert('Please enter the grade 6');
+	return false;
+}
+}
+</script>
+<script>
+function moveToAdd(){
+	document.getElementById("name").value = "";
+	document.getElementById("rno").value = "";
+	document.getElementById("gid1").value = "";
+	document.getElementById("gid2").value = "";
+	document.getElementById("gid3").value = "";
+	document.getElementById("gid4").value = "";
+	document.getElementById("gid5").value = "";
+	document.getElementById("gid6").value = "";
+	return false;
+}
+function moveToSort(){
+	window.location = "Filters.html";
+	return false;
+}
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+function OnCalculateGPA(){
+	var name = $("#name").val();
+	var regno = $("#rno").val();
+	var g1 = $("#gid1").val();
+	var g2 = $("#gid2").val();
+	var g3 = $("#gid3").val();
+	var g4 = $("#gid4").val();
+	var g5 = $("#gid5").val();
+	var g6 = $("#gid6").val();
+	$.ajax({
+	    type: 'POST',
+	    data: 'name='+name+'&regno='+regno+'&g1='+g1+'&g2='+g2+'&g3='+g3+'&g4='+g4+'&g5='+g5+'&g6='+g6+'&operation='+"CalculateGPA",
+	    url: 'http://localhost:8080/GPA_Calculator/Operations_Servlet',
+	    success: function(result){
+	    	$("#tid1").val(result);
+	    }
+	});
+	  }
+$("#button1").ready(function(){
+    $("#button1").click(function(){
+    	OnCalculateGPA();
+    });
+});
+function OnCalculateCGPA(){
+	$.ajax({
+	    type: 'POST',
+	    data: 'operation='+"CalculateCGPA",
+	    url: 'http://localhost:8080/GPA_Calculator/Operations_Servlet',
+	    success: function(result){
+	    	$("#tid2").val(result);
+	        //console.log(result);
+	    }
+	});
+	  }
+$("#button2").ready(function(){
+    $("#button2").click(function(){
+    	OnCalculateCGPA();
+    });
+});
+</script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel = "stylesheet"
+type = "text/css"
+href = "CSS_File.css">
+</head>
+<body>
+<h1>GPA AND CGPA CALCULATOR!!</h1><br>
+<table align="center">
+<form method = "post" action = "http://localhost:8080/GPA_Calculator/Filters.html">
+<tr>
+<td>Name</td><td><input type = "text" name = "name" id = "name"  ><br></td>
+</tr>
+<tr>
+<td>Register No.</td><td><input type = "text" name = "regno" id = "rno"  ><br></td>
+</tr>
+<tr>
+<td>Grade 1     </td><td><input type = "text" name = "g1" id = "gid1"  ><br></td>
+</tr>
+<tr>
+<td>Grade 2     </td><td><input type = "text" name = "g2" id = "gid2"   ><br></td>
+</tr>
+<tr>
+<td>Grade 3     </td><td><input type = "text" name = "g3" id = "gid3"    ><br></td>
+</tr>
+<tr>
+<td>Grade 4     </td><td><input type = "text" name = "g4" id = "gid4"    ><br></td>
+</tr>
+<tr>
+<td>Grade 5     </td><td><input type = "text" name = "g5" id = "gid5"   ><br></td>
+</tr>
+<tr>
+<td>Grade 6     </td><td><input type = "text" name = "g6" id = "gid6"   ><br></td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td></td><td><input type = "button" onclick = "return isEmpty()" id = "button1" name = "operation" value = "CalculateGPA"></td>
+</tr>
+<tr>
+<td></td><td><input type = "text"  name = "operation" id = "tid1"></td>
+</tr>
+<tr>
+<td></td><td><input type = "button" onclick = "return isEmpty()" id = "button2" name = "operation" value = "CalculateCGPA"></td>
+</tr>
+<tr>
+<td></td><td><input type = "text"  name = "operation" id = "tid2"></td>
+</tr>
+</form>
+<tr>
+<td></td><td><input type = "submit" name = "operation" onclick = "moveToAdd()" value = "Add Student"></td>
+<td></td><td><input type = "submit" name = "operation" onclick = "moveToSort()" value = "Sort>>"></td>
+</tr>
+</table>
+</body>
+</html>
